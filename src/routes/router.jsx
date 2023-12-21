@@ -13,6 +13,9 @@ import Dashboard from "../layout/dashboard";
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 // import CommentPage from "../pages/Dashboard/CommentPage/CommentPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Blogs from "../pages/Blogs/Blogs";
+import About from "../pages/About/About";
+import Contact from "../pages/Contact/Contact";
 // import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 // import MakeAnnouncement from "../pages/Dashboard/MakeAnnouncement/MakeAnnouncement";
 // import ReportedComments from "../pages/Dashboard/ReportedComments/ReportedComments";
@@ -29,13 +32,22 @@ export const router = createBrowserRouter([
         path:'/',
         element: <Home></Home>,
         loader: () => fetch('https://opiniox-server.vercel.app/postsCount')
-      }/* , 
+      }, 
       {
-        path:'/allPosts',
-        element:<AllPosts></AllPosts>,
-        loader: () => fetch('https://opiniox-server.vercel.app/postsCount')
-      } */
-      , 
+        path:'/blogs',
+        element:<Blogs></Blogs>,
+        
+      },
+      {
+        path:'/about',
+        element:<About></About>,
+        
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>,
+        
+      },
       /* {
         path:'/membership',
         element:<AllPosts></AllPosts>,

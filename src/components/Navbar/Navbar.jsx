@@ -26,6 +26,7 @@ const Navbar = () => {
     const currentScrollPos = window.scrollY;
     if(currentScrollPos == 0) {
       document.getElementById("navbar").style.backgroundColor = "transparent";
+      document.getElementById("hambarger").style.color = "white";
       document.getElementById("item").style.color = "white";
       document.getElementById("logo").style.color = "white";
       document.getElementById("navbar").style.borderBottom = "0px solid transparent";
@@ -35,6 +36,7 @@ const Navbar = () => {
       document.getElementById("navbar").style.transition = 'ease-in-out';
       document.getElementById("navbar").style.transitionDuration = '.3s';
       document.getElementById("navbar").style.backgroundColor = "white";
+      document.getElementById("hambarger").style.color = "#E8489E";
       document.getElementById("item").style.color = "#E8489E";
       document.getElementById("logo").style.color = "#E8489E";
       document.getElementById("navbar").style.borderBottom = "1px solid #E5E7EB";
@@ -67,16 +69,40 @@ const Navbar = () => {
       </NavLink>
 
       <NavLink
-        to="/membership"
+        to="/blogs"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
             : isActive
-            ? " underline decoration-orange-400 underline-offset-8  capitalize py-1 px-2 mx-2 "
+            ? " underline decoration-[2px] underline-offset-8  capitalize py-1 px-2 mx-2 "
             : "  py-1 px-2 mx-2"
         }
       >
-        Membership
+        Blogs
+      </NavLink>
+      <NavLink
+        to="/about"
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? " underline decoration-[2px] underline-offset-8  capitalize py-1 px-2 mx-2 "
+            : "  py-1 px-2 mx-2"
+        }
+      >
+        About Us
+      </NavLink>
+      <NavLink
+        to="/contact"
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? " underline decoration-[2px] underline-offset-8  capitalize py-1 px-2 mx-2 "
+            : "  py-1 px-2 mx-2"
+        }
+      >
+        Contact Us
       </NavLink>
      { user &&
        <NavLink
@@ -85,7 +111,7 @@ const Navbar = () => {
          isPending
            ? "pending"
            : isActive
-           ? " underline decoration-orange-400 underline-offset-8  capitalize py-1 px-2 mx-2 "
+           ? " underline decoration-[2px] underline-offset-8  capitalize py-1 px-2 mx-2 "
            : "  py-1 px-2 mx-2"
        }
      >
@@ -212,7 +238,7 @@ const Navbar = () => {
           <div>
             {user ? (
               <div className="avatar">
-                <div className="md:w-10 w-8 rounded-full ring ring-primary ">
+                <div className="md:w-10 w-8 rounded-full ring ring-[#E8489E] ">
                   <img className="w-full object-fill " src={user?.photoURL} />
                 </div>
               </div>
@@ -225,12 +251,7 @@ const Navbar = () => {
             {/* login & logout button  */}
             <div>
             <div className="flex justify-center items-center gap-6 ">
-                  <div className="indicator ">
-                    
-                    <button className="flex">
-                      <IoMdNotifications className=" text-3xl text-cyan-500" />
-                    </button>
-                  </div>
+                  
                   
                 </div>
               {/* {user ? (

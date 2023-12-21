@@ -13,7 +13,10 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 // import { useEffect, useState } from "react";
 // import Tags from "../../components/Tags/Tags";
 // import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-
+import { FaUserDoctor } from "react-icons/fa6";
+import { TbDeviceImacCog } from "react-icons/tb";
+import { ImUserTie } from "react-icons/im";
+import { RiBankLine } from "react-icons/ri";
 
 const Home = () => {
   // const { count } = useLoaderData();
@@ -110,192 +113,121 @@ const Home = () => {
         >
           
             
-              <div className="flex justify-between items-center w-11/12 mx-auto ">
-                <div className="text-left">
+              <div className="md:flex md:flex-row justify-between items-center w-11/12 mx-auto ">
+                <div className="text-left md:block hidden">
                   <h1 className="mb-0 text-base md:text-base tracking-wider font-poppins font-medium text-white">
                     WELCOME TO TASKHUB
                   </h1>
-                  <p className=" py-6 font-poppins uppercase text-white lg:text-6xl md:text-5xl text-3xl font-bold">
+                  <p className="mt-3 mb-6 font-poppins uppercase text-white lg:text-6xl md:text-5xl text-3xl font-bold">
                     Manage your <br/> <span style={strokeStyle} className="tracking-widest">[Task]</span> Efficiently
                   </p>
-                  <button className="px-8 text-white bg-pink-500 py-3 font-bold rounded-full relative z-10 hover:bg-pink-700 transition-colors duration-500 font-roboto">Let's Explore</button>
+                  <button className="md:px-8 px-6 text-white py-3 font-bold rounded-full relative z-10 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-indigo-600 hover:to-pink-600 font-roboto lg:text-base md:text-sm">Let's Explore</button>
                   
                  
                 </div>
-                <div className="w-[40%] relative z-10">
-                  <img src="https://i.ibb.co/rfr1xfW/Trello-UICollage-4x.webp" alt="" />
-
+                <div className="md:w-[40%] w-[40%] relative z-10 ">
+                  <img src="https://i.ibb.co/rfr1xfW/Trello-UICollage-4x.webp" alt="" />                 
+                </div>
+                <div className="text-left md:hidden block">
+                  <h1 className="mb-0 text-base md:text-base tracking-wider font-poppins font-medium text-white">
+                    WELCOME TO TASKHUB
+                  </h1>
+                  <p className="mt-3 mb-6 font-poppins uppercase text-white lg:text-6xl md:text-4xl text-3xl font-bold">
+                    Manage your <br/> <span style={strokeStyle} className="tracking-widest">[Task]</span> Efficiently
+                  </p>
+                  <button className="md:px-8 px-6 text-white py-3 font-bold rounded-full relative z-10 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-indigo-600 hover:to-pink-600 font-roboto lg:text-base md:text-sm">Let's Explore</button>
+                  
                  
                 </div>
               </div>
             
         </div>
 
-        <div className="-mt-[250px] z-0">
+        <div className="lg:-mt-[250px] md:-mt-[150px] -mt-[100px] z-0">
           <img className="relative" src="https://i.ibb.co/khJGcQV/hero-bg.png" alt="" />
         </div>
-
-        {/* Tag Section */}
-       {/*  <div className="py-10">
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-8/12 mx-auto bg-white -mt-24 py-8 shadow-md rounded-md">
-            <div className="col-span-1 bg-transparent border-r-[.5px] flex justify-center items-center">
-              <ImPriceTags className="text-2xl text-cyan-500" />
-              <h1 className="text-xl font-bold mb-2 ml-2 text-gray-800">
-                Popular Tags
-              </h1>
-            </div>
-
-            <div className="col-span-2 bg-transparent border-l-[.5px] flex justify-center items-center gap-3">
-              
-            </div>
-          </div>
-        </div> */}
-
-        {/* Announcement Section  */}
-
-        {/* {allAnnouncements?.length > 0 && (
-          <div
-            className="hero"
-            style={{
-              backgroundImage: "url(https://i.ibb.co/HpK7K7k/bg-shap-one.png)",
-              backgroundPosition: "top",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="w-10/12 mx-auto py-10">
-              <SectionTitle heading={"All The Announcements"}></SectionTitle>
-
-              {allAnnouncements?.map((announcement) => (
-                <div
-                  key={announcement._id}
-                  className="relative grid grid-cols-3 w-10/12 mx-auto mt-2 justify-center items-center bg-white shadow-xl rounded-md p-2 "
-                >
-                  <div className="col-span-1 flex justify-center items-center text-cyan-600">
-                    <div className="col-span-2 flex items-center">
-                      <img
-                        src={announcement.authorImage}
-                        className=" w-32 h-32 rounded-xl"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-span-2 p-4">
-                    <h6 className="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-cyan-500 uppercase">
-                      {announcement.author}
-                    </h6>
-                    <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                      {announcement.title}
-                    </h4>
-                    <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
-                      {announcement.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )} */}
 
 
 
         {/* All Posts Section  */}
-        <div
-          style={{
+        {/* style={{
             backgroundImage: "url(https://i.ibb.co/BzzxMwL/docbg-shap.png)",
             backgroundPosition: "center",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-          }}
-          className="bg-[#F6F6F7] rounded-t-6xl py-20"
-        >
-          <SectionTitle heading={"All The Posts"}></SectionTitle>
+          }} */}
+        <div className= "w-10/12 mx-auto py-10">
+          <SectionTitle heading={'What People Using "TaskHub"'}></SectionTitle>
 
-          <div className="w-10/12 text-end pt-5">
-            {/* Popularity Sorting Button  */}
-            {/* <button
-              onClick={() => setNewest(!newest)}
-              className="text-base font-bold col-span-1 bg-cyan-500 hover:bg-cyan-600 text-white py-2 px-3 rounded-md "
-            >
-              {newest ? "Sort By Popularity" : "Sort By Date"}
-            </button> */}
+          
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 py-8">
+          <div style={{
+            backgroundImage: "url(https://i.ibb.co/2KkYLkG/circle.png)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: '#e9499dbd'
+            // background: 'linear-gradient(#ff4032, #00d4ff)'
+
+          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl" >
+            <FaUserDoctor className="text-5xl text-white" />
+            <h1 className="md:text-2xl text-xl font-poppins font-semibold">Doctors</h1>
           </div>
 
-          {/* <AllPosts
-            searchText={searchText}
-            count={count}
-            allPosts={allPosts}
-          ></AllPosts> */}
+          
+          <div style={{
+            backgroundImage: "url(https://i.ibb.co/2KkYLkG/circle.png)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: '#e9499dbd'
+            // background: 'linear-gradient(#ff4032, #00d4ff)'
 
-          {/* Page Amount  */}
-          <div className="flex justify-center pb-3 font-bold">
-            {/* Current Page : {currentPage} */}
+          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl" >
+            <TbDeviceImacCog className="text-5xl text-white" />
+            <h1 className="md:text-2xl text-xl font-poppins font-semibold">Developers</h1>
           </div>
 
-          {/* Pagination  */}
-          {/* <div className="flex justify-center pb-10">
-            <nav>
-              <ul className="flex">
-                <li>
-                  <Link
-                    className="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
-                    aria-label="Previous"
-                  >
-                    <button
-                      onClick={handlePrevPage}
-                      className="material-icons text-sm"
-                    >
-                      <FaArrowLeftLong />
-                    </button>
-                  </Link>
-                </li>
-                {pages.map((i, page) => (
-                  <li key={i}>
-                    <button
-                      onClick={() => setCurrentPage(page)}
-                      className={
-                        currentPage === page
-                          ? "mx-1 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr from-cyan-600 to-cyan-400 p-4 text-sm text-white shadow-md shadow-cyan-500/20 transition duration-150 ease-in-out"
-                          : "mx-1 flex h-9 w-9 items-center justify-center rounded-full"
-                      }
-                    >
-                      {page}
-                    </button>
-                  </li>
-                ))}
+          
+          <div style={{
+            backgroundImage: "url(https://i.ibb.co/2KkYLkG/circle.png)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: '#e9499dbd'
+            // background: 'linear-gradient(#ff4032, #00d4ff)'
 
-                <li>
-                  <a
-                    className="mx-1 flex h-9 w-9 items-center justify-center rounded-full border border-blue-gray-100 bg-transparent p-0 text-sm text-blue-gray-500 transition duration-150 ease-in-out hover:bg-light-300"
-                    aria-label="Next"
-                  >
-                    <button
-                      onClick={handleNextPage}
-                      className="material-icons text-sm"
-                    >
-                      <FaArrowRightLong />
-                    </button>
-                  </a>
-                </li>
+          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl" >
+            <RiBankLine  className="text-5xl text-white" />
+            <h1 className="md:text-2xl text-xl font-poppins font-semibold">Bankers</h1>
+          </div>
 
-                <select
-                  id="difficultyLevel"
-                  value={itemsPerPage}
-                  onChange={handleItemsPerPage}
-                  className="input input-bordered  h-10"
-                >
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                </select>
-              </ul>
-            </nav>
-          </div> */}
+          
+          <div style={{
+            backgroundImage: "url(https://i.ibb.co/2KkYLkG/circle.png)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: '#e9499dbd'
+            // background: 'linear-gradient(#ff4032, #00d4ff)'
+
+          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl" >
+            <ImUserTie className="text-5xl text-white" />
+            <h1 className="md:text-2xl text-xl font-poppins font-semibold">Corporates</h1>
+          </div>
+
+          
+
+          </div>
+          
+
+          
         </div>
 
         {/* Newsletter section */}
         <div>
           <div
-            className="hero h-[200px] md:h-[250px] bg-cyan-600 mt-5"
+            className="hero h-[200px] md:h-[250px] bg-gray-900 mt-5"
             style={{
               backgroundImage: "url(https://i.ibb.co/0mMnGqq/newsletter.png)",
             }}
@@ -310,7 +242,7 @@ const Home = () => {
                 </div>
 
                 <div className="relative h-10 md:w-6/12 w-10/12 mx-auto">
-                  <div className="absolute top-2/4 right-3 grid h-10 w-10 -translate-y-1/4 place-items-center text-4xl text-blue-gray-500 text-cyan-600">
+                  <div className="absolute top-2/4 right-3 grid h-10 w-10 -translate-y-1/4 place-items-center text-4xl text-blue-gray-500 text-pink-600">
                     <IoIosSend />
                   </div>
                   <input

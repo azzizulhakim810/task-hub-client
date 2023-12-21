@@ -40,18 +40,17 @@ const Footer = () => {
 <footer className="grid md:grid-cols-3 grid-cols-1 md:gap-0 gap-3 px-10 py-4 border-t bg-gray-200 items-center justify-center">
 
   <aside className="items-center flex cols-span-1 md:justify-normal justify-center">
-    <img className="lg:w-40 w-32" src="https://i.ibb.co/gMVVZXK/Logo.png" alt="" />
-    <span className="hidden lg:flex">{menuItem}</span>
+  <span id="logo" className="text-2xl font-bold text-pink-600 tracking-wider font-nova">TaskHub</span>
   </aside> 
 
 
     <div className=" cols-span-1 text-center -ml-0 md:-ml-8 lg:-ml-0 md:order-none order-3">
-    <p>2023© OpinioX. All Rights Resereved</p>
+    <p>2023© TaskHub. All Rights Resereved</p>
     </div>
 
 
   <nav className="cols-span-1 order-2 md:order-none">
-  <Link to='#'  className="flex md:justify-end justify-center lg:gap-8 md:gap-4 gap-3 text-2xl text-cyan-500">
+  <Link to='#'  className="flex md:justify-end justify-center lg:gap-8 md:gap-4 gap-3 text-2xl text-pink-500">
       <FaFacebook/> 
       <FaGithub/> 
       <FaInstagram/> 
