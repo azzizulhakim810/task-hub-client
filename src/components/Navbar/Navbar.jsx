@@ -30,6 +30,8 @@ const Navbar = () => {
       document.getElementById("item").style.color = "white";
       document.getElementById("logo").style.color = "white";
       document.getElementById("navbar").style.borderBottom = "0px solid transparent";
+      document.getElementById("signin").style.border = "2px solid #fff";
+      document.getElementById("signin").style.color = "#fff";
     }
 
     if(currentScrollPos > 50) {
@@ -40,6 +42,8 @@ const Navbar = () => {
       document.getElementById("item").style.color = "#E8489E";
       document.getElementById("logo").style.color = "#E8489E";
       document.getElementById("navbar").style.borderBottom = "1px solid #E5E7EB";
+      document.getElementById("signin").style.border = "2px solid #E8489E";
+      document.getElementById("signin").style.color = "#E8489E";
     }
     
   });
@@ -106,7 +110,7 @@ const Navbar = () => {
       </NavLink>
      { user &&
        <NavLink
-       to="/dashboard/myProfile"
+       to="/dashboard/createNew"
        className={({ isActive, isPending }) =>
          isPending
            ? "pending"
@@ -190,7 +194,7 @@ const Navbar = () => {
             </div>
             <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 -ml-16 divide-y-[1px] divide-gray-200">
               <li className="px-4 py-2">{user?.displayName}</li>
-              <li><Link to="/">Dashboard</Link ></li>
+              <li><Link to="/dashboard/createNew">Dashboard</Link ></li>
               <li><button onClick={handleSignOut}>Signout</button></li>
             </ul>
           </div>
@@ -223,9 +227,7 @@ const Navbar = () => {
                 </div> */}
 
                 <Link to="/signin">
-                  <button className=" bg-cyan-500 hover:bg-white  text-white hover:text-cyan-500 rounded-3xl border-none md:text-sm text-xs px-6 py-3 font-bold">
-                    Join Us
-                  </button>
+                <button id="signin" className="md:px-8 px-5 text-white py-[5px] font-bold rounded-full border-2 border-white relative z-10 hover:from-indigo-600 hover:to-pink-600 font-roboto lg:text-base md:text-sm">Sign In</button>
                 </Link>
               </div>
             )}

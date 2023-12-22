@@ -7,15 +7,18 @@ import Register from "../pages/Register/Register";
 
 // import ViewSinglePost from "../pages/ViewSinglePost/ViewSinglePost";
 // import AllPosts from "../pages/AllPosts/AllPosts";
-import Dashboard from "../layout/dashboard";
-// import MyPosts from "../pages/Dashboard/MyPosts/MyPosts";
-// import AddPost from "../pages/Dashboard/AddPost/AddPost";
+
+import MyTasks from "../pages/Dashboard/MyTasks/MyTasks";
+import AddPost from "../pages/Dashboard/CreateNewTask/CreateNewTask";
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 // import CommentPage from "../pages/Dashboard/CommentPage/CommentPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Blogs from "../pages/Blogs/Blogs";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
+import Dashboard from "../layout/Dashboard";
+import CreateNewTask from "../pages/Dashboard/CreateNewTask/CreateNewTask";
+import ManageTasks from "../pages/Dashboard/ManageTasks/ManageTasks";
 // import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 // import MakeAnnouncement from "../pages/Dashboard/MakeAnnouncement/MakeAnnouncement";
 // import ReportedComments from "../pages/Dashboard/ReportedComments/ReportedComments";
@@ -73,24 +76,25 @@ export const router = createBrowserRouter([
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
     children: [
-      {
+      /* {
         path: '/dashboard/myprofile',
         element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>,
         
+      }, */
+      
+      {
+        path: '/dashboard/createNew',
+        element: <PrivateRoute><CreateNewTask></CreateNewTask></PrivateRoute>
       },
-      /* {
-        path: '/dashboard/myposts',
-        element: <PrivateRoute><MyPosts></MyPosts></PrivateRoute>
-      }, */
-      /* {
-        path: '/dashboard/addpost',
-        element: <PrivateRoute><AddPost></AddPost></PrivateRoute>
-      }, */
-      /* {
-        path: '/dashboard/comment/:id',
-        element: <PrivateRoute><CommentPage></CommentPage></PrivateRoute> ,
-        loader: ({params}) => fetch(`https://opiniox-server.vercel.app/allComments/${params.id}`)
-      }, */
+      {
+        path: '/dashboard/myTasks',
+        element: <PrivateRoute><MyTasks></MyTasks></PrivateRoute>
+      },
+      {
+        path: '/dashboard/manageTasks',
+        element: <PrivateRoute><ManageTasks></ManageTasks></PrivateRoute> ,
+        
+      },
       /* {
         path: '/dashboard/manageUsers',
         element: <PrivateRoute><ManageUsers></ManageUsers></PrivateRoute>

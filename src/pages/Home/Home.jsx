@@ -121,7 +121,7 @@ const Home = () => {
                   <p className="mt-3 mb-6 font-poppins uppercase text-white lg:text-6xl md:text-5xl text-3xl font-bold">
                     Manage your <br/> <span style={strokeStyle} className="tracking-widest">[Task]</span> Efficiently
                   </p>
-                  <button className="md:px-8 px-6 text-white py-3 font-bold rounded-full relative z-10 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-indigo-600 hover:to-pink-600 font-roboto lg:text-base md:text-sm">Let's Explore</button>
+                  <button className="md:px-8 px-6 text-white py-3 font-bold rounded-full relative z-10 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-indigo-600 hover:to-pink-600 font-roboto lg:text-sm md:text-sm">Let's Explore</button>
                   
                  
                 </div>
@@ -149,13 +149,7 @@ const Home = () => {
 
 
 
-        {/* All Posts Section  */}
-        {/* style={{
-            backgroundImage: "url(https://i.ibb.co/BzzxMwL/docbg-shap.png)",
-            backgroundPosition: "center",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-          }} */}
+        {/* WHAT PEOPLE USING "TASKHUB" Section  */}
         <div className= "w-10/12 mx-auto py-10">
           <SectionTitle heading={'What People Using "TaskHub"'}></SectionTitle>
 
@@ -169,7 +163,7 @@ const Home = () => {
             backgroundColor: '#e9499dbd'
             // background: 'linear-gradient(#ff4032, #00d4ff)'
 
-          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl" >
+          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl transition-transform ease-linear duration-200 hover:transform hover:-translate-y-2" >
             <FaUserDoctor className="text-5xl text-white" />
             <h1 className="md:text-2xl text-xl font-poppins font-semibold">Doctors</h1>
           </div>
@@ -183,7 +177,7 @@ const Home = () => {
             backgroundColor: '#e9499dbd'
             // background: 'linear-gradient(#ff4032, #00d4ff)'
 
-          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl" >
+          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl transition-transform ease-linear duration-200 hover:transform hover:-translate-y-2" >
             <TbDeviceImacCog className="text-5xl text-white" />
             <h1 className="md:text-2xl text-xl font-poppins font-semibold">Developers</h1>
           </div>
@@ -197,7 +191,7 @@ const Home = () => {
             backgroundColor: '#e9499dbd'
             // background: 'linear-gradient(#ff4032, #00d4ff)'
 
-          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl" >
+          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl transition-transform ease-linear duration-200 hover:transform hover:-translate-y-2" >
             <RiBankLine  className="text-5xl text-white" />
             <h1 className="md:text-2xl text-xl font-poppins font-semibold">Bankers</h1>
           </div>
@@ -211,8 +205,8 @@ const Home = () => {
             backgroundColor: '#e9499dbd'
             // background: 'linear-gradient(#ff4032, #00d4ff)'
 
-          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl" >
-            <ImUserTie className="text-5xl text-white" />
+          }} className="h-40 flex flex-col gap-2 justify-center items-center rounded-2xl shadow-2xl transition-transform ease-linear duration-200 hover:transform hover:-translate-y-2" >
+            <ImUserTie className="text-5xl block text-white" />
             <h1 className="md:text-2xl text-xl font-poppins font-semibold">Corporates</h1>
           </div>
 
@@ -246,7 +240,7 @@ const Home = () => {
                     <IoIosSend />
                   </div>
                   <input
-                    className="peer h-14 w-full rounded-[7px] bg-white border px-3 py-6 !pr-9 font-sans text-base font-normal text-blue-gray-700 outline outline-0 text-cyan-600"
+                    className="peer h-14 w-full rounded-[7px] bg-white border px-3 py-6 !pr-9 font-sans text-base font-normal text-blue-gray-700 outline outline-0 text-pink-600"
                     placeholder="Enter your email address "
                   />
                 </div>

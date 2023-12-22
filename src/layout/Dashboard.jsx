@@ -3,7 +3,7 @@ import { CgProfile } from "react-icons/cg";
 import { BsFillFileEarmarkPostFill } from "react-icons/bs";
 import { MdPostAdd } from "react-icons/md";
 import { FaUserEdit } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa6";
+import { FaUserGear  } from "react-icons/fa6";
 import { IoHomeOutline } from "react-icons/io5";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -12,16 +12,19 @@ import useAxiosSecure from "../hooks/useAxiosSecure";
 const Dashboard = () => {
   const axiosSecure = useAxiosSecure();
   const {user} = useContext(AuthContext);
-  const userEmail = user?.email;
-  const [isAdmin, setIsAdmin] = useState();
+  const photoURL = user?.photoURL;
+  const email = user?.email;
+  const name = user?.displayName;
+  console.log(photoURL, email);
+  // const [isAdmin, setIsAdmin] = useState();
 
-useEffect(() => {
+/* useEffect(() => {
   axiosSecure.get(`/checkAdmin/?email=${userEmail}`)
   .then(res => setIsAdmin(res.data?.role))
-}, [axiosSecure, userEmail])
+}, [axiosSecure, userEmail]) */
 
 // console.log(isAdmin);
-  const adminMenu = (
+/*   const adminMenu = (
     <div className="text-[15px] font-medium flex flex-col">
       <NavLink
         to="/dashboard/myProfile"
@@ -29,7 +32,7 @@ useEffect(() => {
               isPending
                 ? "pending"
                 : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-lg transition-all duration-500"
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-lg transition-all duration-500"
                 : "px-2 py-2"
             }
       >
@@ -43,7 +46,7 @@ useEffect(() => {
               isPending
                 ? "pending"
                 : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-lg transition-all duration-500"
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-lg transition-all duration-500"
                 : "px-2 py-2"
             }
       >
@@ -57,7 +60,7 @@ useEffect(() => {
               isPending
                 ? "pending"
                 : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-lg transition-all duration-500"
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-lg transition-all duration-500"
                 : "px-2 py-2"
             }
      >
@@ -70,7 +73,7 @@ useEffect(() => {
               isPending
                 ? "pending"
                 : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-lg transition-all duration-500"
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-lg transition-all duration-500"
                 : "px-2 py-2"
             }
      >
@@ -81,47 +84,81 @@ useEffect(() => {
      
     </div>
 
-  );
+  ); */
 
   const userMenu = (
     <div className="text-[15px] font-medium flex flex-col">
-      <NavLink
+      {/* <NavLink
             className={({ isActive, isPending }) =>
               isPending
                 ? "pending"
                 : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-lg transition-all duration-500"
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-lg transition-all duration-500"
                 : "px-2 py-2"
             }
             to="/dashboard/myprofile"
           >
             <li className="flex items-center gap-2 md:text-lg text-sm justify-start"><CgProfile />My Profile</li>
-          </NavLink> 
+          </NavLink>  */}
           <NavLink
             className={({ isActive, isPending }) =>
               isPending
                 ? "pending"
                 : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-lg transition-all duration-500"
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-lg transition-all duration-500"
                 : " px-2 py-2"
             }
-            to="/dashboard/addpost"
+            to="/dashboard/createNew"
           >
             <li className="flex items-center gap-2 md:text-lg text-sm justify-start"><MdPostAdd />
-Add Post</li>
+Create Task</li>
           </NavLink>
           <NavLink
             className={({ isActive, isPending }) =>
               isPending
                 ? "pending"
                 : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-xl transition-all duration-500"
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-xl transition-all duration-500"
                 : " px-2 py-2"
             }
-            to="/dashboard/myposts"
+            to="/dashboard/myTasks"
           >
             <li className="flex items-center gap-2 md:text-lg text-sm justify-start"><FaUserEdit />
-My Posts</li>
+My Tasks</li>
+          </NavLink>
+
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-xl transition-all duration-500"
+                : " px-2 py-2"
+            }
+            to="/dashboard/manageTasks"
+          >
+            <li className="flex items-center gap-2 md:text-lg text-sm justify-start"><FaUserGear  />
+Manage Tasks</li>
+          </NavLink>
+     
+    </div>
+
+  );
+
+  const home = (
+    <div className="text-[15px] font-medium flex flex-col">
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? " capitalize  bg-white text-pink-600 px-6 py-2 rounded-xl transition-all duration-500"
+                : " px-2 py-2"
+            }
+            to="/"
+          >
+            <li className="flex items-center gap-2 md:text-lg text-sm justify-start"><IoHomeOutline />
+Home</li>
           </NavLink>
      
     </div>
@@ -132,56 +169,26 @@ My Posts</li>
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <div className="w-[150px] md:w-64 bg-cyan-600 md:p-6 p-2 pt-6">
+      <div className="w-[150px] md:w-64 bg-pink-600 md:p-6 p-2 pt-6">
         {/* Sidebar content */}
-        <Link
-          to="/"
-          className=" flex align-middle justify-between items-center"
-        >
-          <img
-            id="image"
-            src="https://i.ibb.co/HX9fnGp/Logo-white.png"
-            className="md:w-52 w-36 h-8 md:h-14 -ml-2"
-            alt=""
-          />
-        </Link>
+        <Link to="/" className=" normal-case font-bold  flex flex-col align-middle items-center">
+            <img
+              id="image"
+              src={photoURL}
+              className="md:w-16 w-20 rounded-full -ml-2"
+              alt=""
+            />
+            <span id="logo" className="text-xl pt-2 text-white tracking-wider font-poppins">{name}</span>
+          </Link>
         <ul className="flex flex-col gap-2 text-white font-semibold py-4">
-          {
-            isAdmin === 'admin' ?
-            <>{adminMenu}</> : <>{userMenu}</>
-          }
           
-       
+          {userMenu}
+          
           <div className="h-[2px] w-full bg-white my-6"></div> 
 
-          <NavLink
-            className={({ isActive, isPending }) =>
-              isPending
-                ? "pending"
-                : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-xl transition-all duration-500"
-                : " px-2 py-2"
-            }
-            to="/"
-          >
-            <li className="flex items-center gap-2 md:text-base text-sm justify-start"><IoHomeOutline />
+          {home}
 
-Home</li>
-          </NavLink>
-
-          <NavLink
-            className={({ isActive, isPending }) =>
-              isPending
-                ? "pending"
-                : isActive
-                ? " capitalize  bg-white text-cyan-600 px-6 py-2 rounded-xl transition-all duration-500"
-                : " px-2 py-2"
-            }
-            to="/membership"
-          >
-            <li className="flex items-center gap-2 md:text-base text-sm justify-start"><FaUsers /> 
-Membership</li>
-          </NavLink>
+          
           
         </ul>
       </div>
@@ -192,8 +199,11 @@ Membership</li>
         <header className="w-full bg-white shadow-lg">
           {/* Navbar content */}
           <nav className="container mx-auto px-4">
-            <div className="flex justify-between items-center py-6">
-              <h1 className="text-xl font-semibold">Dashboard</h1>
+            <div className="flex py-6">
+            <Link to="/" className=" normal-case font-bold ">
+            <span id="logo" className="md:text-4xl text-2xl text-pink-600 tracking-wider font-nova">TaskHub</span>
+          </Link>
+             
             </div>
           </nav>
         </header>
