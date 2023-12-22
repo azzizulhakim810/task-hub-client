@@ -1,8 +1,18 @@
-# React + Vite
+# [TaskHub](https://task-hub-d7947.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Client-Repository](https://github.com/azzizulhakim810/task-hub-client)
 
-Currently, two official plugins are available:
+[Server-Repository](https://github.com/azzizulhakim810/task-hub-server)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# Features
+
+* User need to log in to make task
+* He can switch task from todo to ongoing or from ongoing to completed or from one status to another.
+* User can log in by google as well
+* User can see his own task from my task
+
+
+# Technology
+
+[![My Skills](https://skillicons.dev/icons?i=vite,react,tailwind,nodejs,express,firebase,vercel)]()![alt text](https://raw.githubusercontent.com/azzizulhakim810/opiniox-client/5b03320751c329a0bee44462a0d048f3adb84117/public/daisyui(50).svg)
