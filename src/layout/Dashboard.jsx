@@ -15,7 +15,7 @@ const Dashboard = () => {
   const photoURL = user?.photoURL;
   const email = user?.email;
   const name = user?.displayName;
-  console.log(photoURL, email);
+  // console.log(photoURL, email);
   // const [isAdmin, setIsAdmin] = useState();
 
 /* useEffect(() => {

@@ -1,90 +1,16 @@
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Select from "react-select";
+import { useContext } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+
 
 const CreateNewTask = () => {
   const { user } = useContext(AuthContext);
   const userEmail = user?.email;
 
-  const navigate = useNavigate();
-  const [postCount, setPostCount] = useState([]);
-  const [selectedTag, setSelectedTag] = useState(null);
   const axiosSecure = useAxiosSecure();
-  /*   useEffect(() => {
-    const fetchPostCount = async () => {
-    const res = await axiosSecure.get(`/totalPost?email=${userEmail}`)
-    // console.log(res.data);
-    setPostCount(res.data);   
-    };
 
-    fetchPostCount();
-  }, [userEmail, axiosSecure]); */
-
-  // console.log(postCount);
-
-  /*   const handleCreateNewTask = (e) => {
-    e.preventDefault();
-   
-
-    const form = e.target;
-    const author = form.name.value;
-    const authorEmail = form.authorEmail.value;
-    const title = form.title.value;
-    const description = form.description.value;
-    const authorImage = form.authorImage.value;
-    const tags = selectedTag.value;
- 
-   
-
-    const newPost = {
-      author,
-      authorEmail,
-      title,
-      description,
-
-      authorImage,
-      tags,
-      commentsCount: 0,
-
-    };
-
-    console.log(newPost);
-
-    axiosSecure.post('/posts', newPost)
-    .then(res => {
-      console.log(res.data);
-      if(res.data.insertedId) {
-        Swal.fire(
-          'Great!',
-          "Post Submitted Successfully",
-          'success'
-        );
-         form.reset();
-         navigate('/dashboard/myPosts')
-      }
-    }
-      
-      )
-  }; */
-
-  /*   const tagsOptions = [
-    { value: "coding", label: "coding" },
-    { value: "travel", label: "travel" },
-    { value: "community", label: "community" },
-    { value: "technology", label: "technology" },
-    { value: "books", label: "books" },
-    { value: "food", label: "food" },
-  ]; */
-
-  /*   const handleChange = (tag) => {
-    setSelectedTag(tag);
-  }; */
   // ------------------------------------------
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (taskInfo) => {
@@ -93,7 +19,7 @@ const CreateNewTask = () => {
     const taskDetails = {
       taskInfo,
       userEmail,
-      list:'to-do'
+      status:'to-do'
     }
 
     axiosSecure.post('/tasks', taskDetails)
@@ -106,16 +32,16 @@ const CreateNewTask = () => {
           'success'
         );
         reset();
-        //  navigate('/dashboard/myPosts')
+        
       }
     }
     )
   };
-  // ---------------------------------------------
+
   return (
     <div className="container mx-auto mt-2">
       <div className="bg-white p-8 shadow-md rounded-md">
-      {/* <SectionTitle heading={'Create your TODO'}></SectionTitle> */}
+     
 
         <form className="pt-3" onSubmit={handleSubmit(onSubmit)}>
           {/* Title & Description row */}

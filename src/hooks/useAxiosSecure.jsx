@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000/'
+  baseURL: 'https://task-hub-server-tau.vercel.app/'
 })
 
 const useAxiosSecure = () => {
